@@ -1,6 +1,2 @@
-# def main():
-#     print("hello ai coding world")
-
-# if __name__ == "__main__":
-#     main()
-print("hello ai coding world")
+for i in range(10):
+    print("hello world AI")
