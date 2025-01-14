@@ -1,7 +1,18 @@
+from collections import Counter
+import re
+
 # Read transcript file and store contents
 with open('./transcript.txt', 'r') as file:
     transcript_content = file.read()
 
-# Print first 100 characters as preview
-print("First 100 characters of transcript:")
-print(transcript_content[:100])
+# Convert to lowercase and split into words
+# Remove punctuation and filter out empty strings
+words = re.findall(r'\w+', transcript_content.lower())
+
+# Count word frequencies
+word_freq = Counter(words)
+
+# Print the 20 most common words and their frequencies
+print("Top 20 most frequent words:")
+for word, count in word_freq.most_common(20):
+    print(f"{word}: {count}")
